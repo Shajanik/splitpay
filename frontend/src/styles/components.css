@@ -1,0 +1,435 @@
+/* ---------------- Buttons ---------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14.5px;
+  padding: 11px 22px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
+}
+.btn:active {
+  transform: scale(0.97);
+}
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--coral), var(--coral-deep));
+  color: #fff8f0;
+  box-shadow: var(--shadow-coral);
+}
+.btn-primary:hover:not(:disabled) {
+  box-shadow: 0 14px 30px -8px rgba(241, 104, 71, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-leaf {
+  background: linear-gradient(135deg, var(--light-green-deep), var(--leaf-deep));
+  color: #f4fbf3;
+  box-shadow: var(--shadow-green);
+}
+.btn-leaf:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--border-strong);
+}
+.btn-ghost:hover:not(:disabled) {
+  background: var(--paper-tint);
+}
+
+.btn-sm {
+  padding: 7px 16px;
+  font-size: 13px;
+}
+
+/* ---------------- Cards ---------------- */
+.card {
+  background: var(--paper);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  padding: 24px;
+}
+
+.card-flush {
+  padding: 0;
+  overflow: hidden;
+}
+
+/* ---------------- Stat cards (dashboard) ---------------- */
+.stat-card {
+  border-radius: var(--radius-lg);
+  padding: 22px 22px 20px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 132px;
+  isolation: isolate;
+}
+
+.stat-card .stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.55);
+}
+.stat-card .stat-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.stat-card .stat-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.stat-card .stat-value {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.stat-card .stat-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+.stat-card::after {
+  content: '';
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  right: -50px;
+  bottom: -60px;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.tone-yellow {
+  background: linear-gradient(160deg, #fff6d6, var(--pastel-yellow));
+  box-shadow: 0 10px 26px -10px rgba(246, 214, 104, 0.5);
+}
+.tone-yellow::after {
+  background: var(--pastel-yellow-deep);
+}
+
+.tone-blue {
+  background: linear-gradient(160deg, #eaf6fb, var(--soft-blue));
+  box-shadow: var(--shadow-blue);
+}
+.tone-blue::after {
+  background: var(--soft-blue-deep);
+}
+
+.tone-green {
+  background: linear-gradient(160deg, #eef8ec, var(--light-green));
+  box-shadow: var(--shadow-green);
+}
+.tone-green::after {
+  background: var(--light-green-deep);
+}
+
+.tone-peach {
+  background: linear-gradient(160deg, #fff1e3, var(--peach));
+  box-shadow: 0 10px 26px -10px rgba(243, 181, 133, 0.5);
+}
+.tone-peach::after {
+  background: var(--peach-deep);
+}
+
+/* ---------------- Badges / chips ---------------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 999px;
+}
+.badge-pending {
+  background: #fff1e0;
+  color: #b5622a;
+}
+.badge-settled {
+  background: #e4f5e6;
+  color: #337a45;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--paper-tint);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 5px 12px 5px 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.chip .chip-avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #fff;
+}
+.chip button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ink-faint);
+  font-size: 15px;
+  line-height: 1;
+  padding: 0;
+}
+.chip button:hover {
+  color: var(--coral-deep);
+}
+
+/* ---------------- Forms ---------------- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 20px;
+}
+.field label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.field .hint {
+  font-size: 12px;
+  color: var(--ink-faint);
+  font-weight: 400;
+}
+
+.input,
+.select {
+  background: var(--paper);
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 11px 14px;
+  font-size: 14.5px;
+  color: var(--ink);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  width: 100%;
+}
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: var(--coral);
+  box-shadow: 0 0 0 4px rgba(255, 138, 114, 0.14);
+}
+.input.with-prefix-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.amount-input-wrap {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  padding: 0 14px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.amount-input-wrap:focus-within {
+  border-color: var(--coral);
+  box-shadow: 0 0 0 4px rgba(255, 138, 114, 0.14);
+}
+.amount-input-wrap span {
+  color: var(--ink-soft);
+  font-weight: 600;
+  font-size: 15px;
+}
+.amount-input-wrap input {
+  border: none;
+  background: transparent;
+  padding: 11px 8px;
+  font-size: 14.5px;
+  width: 100%;
+  outline: none;
+  color: var(--ink);
+}
+
+.tag-input-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 9px 10px;
+  background: var(--paper);
+}
+.tag-input-box:focus-within {
+  border-color: var(--coral);
+  box-shadow: 0 0 0 4px rgba(255, 138, 114, 0.14);
+}
+.tag-input-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+  min-width: 140px;
+  font-size: 14.5px;
+  padding: 5px 4px;
+  background: transparent;
+}
+
+.suggestions {
+  position: relative;
+}
+.suggestions-list {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lift);
+  z-index: 10;
+  max-height: 180px;
+  overflow-y: auto;
+}
+.suggestions-list button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 9px 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--ink);
+}
+.suggestions-list button:hover {
+  background: var(--paper-tint);
+}
+
+/* ---------------- Empty state ---------------- */
+.empty-state {
+  text-align: center;
+  padding: 50px 20px;
+  color: var(--ink-soft);
+}
+.empty-state svg {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 14px;
+}
+.empty-state h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+
+/* ---------------- Toast ---------------- */
+.toast {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 14px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: var(--shadow-lift);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 100;
+  animation: toast-in 0.3s ease;
+}
+.toast.error {
+  background: #7a3428;
+}
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------- Loader ---------------- */
+.loader-dots {
+  display: flex;
+  gap: 6px;
+  padding: 30px;
+  justify-content: center;
+}
+.loader-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--coral);
+  animation: bounce 1s infinite ease-in-out;
+}
+.loader-dots span:nth-child(2) {
+  animation-delay: 0.15s;
+  background: var(--leaf);
+}
+.loader-dots span:nth-child(3) {
+  animation-delay: 0.3s;
+  background: var(--sky);
+}
+@keyframes bounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(0.6);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ---------------- Person avatar ---------------- */
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  color: #fff;
+  flex-shrink: 0;
+}
