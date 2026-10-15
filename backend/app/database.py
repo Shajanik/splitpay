@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 MONGODB_URI = os.getenv("MONGODB_URI", "mongodb://localhost:27017")
-MONGODB_DB = os.getenv("MONGODB_DB", "splitpay_expenses")
+MONGODB_DB = os.getenv("MONGODB_DB", "Cluster0")
 
 client: AsyncIOMotorClient | None = None
 db = None
